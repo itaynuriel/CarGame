@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".activity_main">
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/left_btn"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/baseline_arrow_back_24"
+        android:layout_alignParentBottom="true"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/right_btn"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/baseline_arrow_forward_24"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <!--    <Button-->
+<!--        android:id="@+id/button"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="85dp"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:layout_marginTop="600dp"-->
+<!--        android:drawableBottom="@drawable/baseline_arrow_back_24"-->
+<!--        android:text="" />-->
+
+    <ImageView
+        android:id="@+id/heart1"
+        android:layout_marginVertical="20dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/heart" />
+
+    <ImageView
+        android:id="@+id/heart2"
+        android:layout_marginVertical="20dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/heart" />
+
+    <ImageView
+        android:id="@+id/heart3"
+        android:layout_marginVertical="20dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/heart" />
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22dp"
+            android:text="Score:"
+            android:textColor="@color/purple_500"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="135dp"/>
+
+        <TextView
+            android:id="@+id/text_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/purple_500"
+            android:text="0"
+            android:layout_marginStart="6dp"
+            android:layout_marginVertical="11dp"
+            android:textSize="25dp" />
+
+
+
+
+        <!--    <Button-->
+<!--        android:id="@+id/button2"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="85dp"-->
+<!--        android:layout_marginTop="600dp"-->
+<!--        android:layout_marginHorizontal="285dp"-->
+<!--        android:drawableRight="@drawable/baseline_arrow_forward_24"-->
+<!--        android:text="" />-->
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="40dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_0_0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_0_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_0_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_0_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_0_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_1_0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_1_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_1_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_1_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_1_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_2_0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_2_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_2_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_2_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_2_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_3_0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_3_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_3_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_3_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_3_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_4_0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_4_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_4_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_4_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rock_4_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/rock"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/car_5_0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/car1"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/car_5_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/car1"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/car_5_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/car1"/>
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/car_5_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/car1"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/car_5_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/car1"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

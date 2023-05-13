@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main_activity_menu"
+    android:keepScreenOn="true">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background"
+        android:scaleType="centerCrop"/>
+
+    <Button
+        android:id="@+id/main_menu_BTN_SlowButtonGameMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:background="#7296ef"
+        android:text="Slow Game Mode"
+        android:textAllCaps="false"
+        android:textSize="22sp"
+        style="@style/Animation.Design.BottomSheetDialog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/main_menu_BTN_ButtonGameMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:background="#7296ef"
+        android:text= "Fast Game Mode"
+        android:textAllCaps="false"
+        android:textSize="23sp"
+        style="@style/Animation.Design.BottomSheetDialog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/main_menu_BTN_SensorsGameMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="#7296ef"
+        android:textSize="26sp"
+        android:text="Sensors Game Mode"
+        android:textAllCaps="false"
+        style="@style/Animation.Design.BottomSheetDialog"
+        app:layout_constraintEnd_toEndOf="@+id/main_menu_BTN_ButtonGameMode"
+        app:layout_constraintStart_toStartOf="@+id/main_menu_BTN_ButtonGameMode"
+        app:layout_constraintTop_toBottomOf="@+id/main_menu_BTN_ButtonGameMode"/>
+
+    <Button
+        android:id="@+id/main_menu_BTN_Leaderboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="99dp"
+        android:background="#7296ef"
+        android:textSize="28sp"
+        android:text="Leader Board"
+        android:textAllCaps="false"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        app:layout_constraintEnd_toEndOf="@+id/main_menu_BTN_SensorsGameMode"
+        app:layout_constraintStart_toStartOf="@+id/main_menu_BTN_SensorsGameMode"
+        app:layout_constraintTop_toBottomOf="@+id/main_menu_BTN_SensorsGameMode"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
