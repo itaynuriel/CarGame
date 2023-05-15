@@ -1,6 +1,9 @@
 package com.example.hw1;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -8,14 +11,14 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import com.example.hw1.Utilities.Score;
-
-
 import java.util.ArrayList;
+
+import com.example.hw1.Adapter_Score;
+import com.example.hw1.Utilities.Score;
+import com.example.hw1.R;
+
 public class FragmentRanks extends Fragment {
+
     public interface CallBack_Ranks {
         void clicked(Score score);
     }
@@ -26,7 +29,6 @@ public class FragmentRanks extends Fragment {
     private LinearLayoutManager linearLayoutManager;
 
     public FragmentRanks() {
-
     };
 
     public void setActivity(AppCompatActivity activity) {
@@ -42,23 +44,17 @@ public class FragmentRanks extends Fragment {
         fragment_ranks_LST_scores.setAdapter(adapter_score);
         int position = 0;
         int i = 0;
-
         for (Score s : scores) {
-            if (s.isOnLocation())
-            {
+            if (s.isOnLocation()) {
                 position = i;
                 break;
             }
             i++;
-       }
+        }
         linearLayoutManager.scrollToPosition(position);
 
         adapter_score.setScoreItemClickListener(new Adapter_Score.ScoreItemClickListener() {
             @Override
-            public void locationClicked(com.google.android.material.color.utilities.Score score) {
-
-            }
-
             public void locationClicked(Score score) {
                 if (callBackRanks != null)
                     callBackRanks.clicked(score);
@@ -75,8 +71,8 @@ public class FragmentRanks extends Fragment {
         fragment_ranks_LST_scores.setLayoutManager(linearLayoutManager);
         fragment_ranks_LST_scores.setHasFixedSize(true);
         fragment_ranks_LST_scores.setItemAnimator(new DefaultItemAnimator());
-        return view;
 
+        return view;
     }
 
     private void findViews(View view) {
