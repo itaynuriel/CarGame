@@ -9,14 +9,15 @@ import android.os.Vibrator;
 import android.widget.Toast;
 
 import com.example.hw1.R;
+import com.google.android.material.textview.MaterialTextView;
 
 
-    public class signalGenerator extends Application {
-
+public class signalGenerator extends Application {
         private static signalGenerator instance;
         private static MediaPlayer mediaPlayer;
         private Context context;
         private static Vibrator vibrator;
+
 
         private signalGenerator(Context context) {
             this.context = context;

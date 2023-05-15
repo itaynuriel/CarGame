@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,6 +18,9 @@ import com.example.hw1.Adapter_Score;
 import com.example.hw1.R;
 
 public class Adapter_Score extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    public Adapter_Score(AppCompatActivity activity, ArrayList<com.example.hw1.Utilities.Score> scores) {
+    }
+
     public interface ScoreItemClickListener {
         void locationClicked(Score score);
     }

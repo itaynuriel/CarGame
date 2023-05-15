@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.example.hw1.Utilities.Score;
 
-import com.google.android.material.color.utilities.Score;
 
 import java.util.ArrayList;
 public class FragmentRanks extends Fragment {
@@ -26,6 +26,7 @@ public class FragmentRanks extends Fragment {
     private LinearLayoutManager linearLayoutManager;
 
     public FragmentRanks() {
+
     };
 
     public void setActivity(AppCompatActivity activity) {
@@ -40,18 +41,24 @@ public class FragmentRanks extends Fragment {
         Adapter_Score adapter_score = new Adapter_Score(activity, scores);
         fragment_ranks_LST_scores.setAdapter(adapter_score);
         int position = 0;
-//        int i = 0;
-//        for (Score s : scores) {
-//            if (s.isOnLocation()) {
-//                position = i;
-//                break;
-//            }
-//            i++;
-//       }
+        int i = 0;
+
+        for (Score s : scores) {
+            if (s.isOnLocation())
+            {
+                position = i;
+                break;
+            }
+            i++;
+       }
         linearLayoutManager.scrollToPosition(position);
 
         adapter_score.setScoreItemClickListener(new Adapter_Score.ScoreItemClickListener() {
             @Override
+            public void locationClicked(com.google.android.material.color.utilities.Score score) {
+
+            }
+
             public void locationClicked(Score score) {
                 if (callBackRanks != null)
                     callBackRanks.clicked(score);
@@ -68,7 +75,6 @@ public class FragmentRanks extends Fragment {
         fragment_ranks_LST_scores.setLayoutManager(linearLayoutManager);
         fragment_ranks_LST_scores.setHasFixedSize(true);
         fragment_ranks_LST_scores.setItemAnimator(new DefaultItemAnimator());
-
         return view;
 
     }

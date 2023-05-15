@@ -2,6 +2,10 @@ package com.example.hw1;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
+import com.example.hw1.Utilities.StepCallback;
+import com.example.hw1.Utilities.StepDetector;
 import com.example.hw1.Utilities.signalGenerator;
 
 import android.content.Intent;
@@ -9,12 +13,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.imageview.ShapeableImageView;
+import com.google.android.material.textview.MaterialTextView;
 
 import java.util.Random;
 
@@ -22,7 +28,6 @@ import java.util.Random;
 public class activity_main extends AppCompatActivity {
 
     private ShapeableImageView[][] board;
-
     private final int ROWS = 6;
     private final int COLS = 5;
     private FloatingActionButton arrow_left_btn;
@@ -31,11 +36,15 @@ public class activity_main extends AppCompatActivity {
     private ImageView[] heartArr;
     public static int DELAY;
 
+    public static int game_mode;
+
+    public FloatingActionButton arrow_button;
     private TextView text_counter;
     private int counter = 0;
     private int heartArrayIndex=2;
 
 
+    private StepDetector stepDetector;
 
 
     protected void onCreate(Bundle savedInstanceState)
@@ -43,6 +52,22 @@ public class activity_main extends AppCompatActivity {
         Log.d("pttt","onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+//        Fragment fragment = new MapFragment();
+//        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout_map,fragment).commit();
+
+        // Disable buttons on sensor mode
+        if (2 == game_mode) {
+            arrow_button = findViewById(R.id.left_btn);
+            arrow_button.setVisibility(View.INVISIBLE);
+
+            arrow_button = findViewById(R.id.right_btn);
+            arrow_button.setVisibility(View.INVISIBLE);
+
+            Log.d("pttt","AAAAAAAAAAAAAAAAA");
+            initStepDetector();
+
+        }
 
 
         findViews();
@@ -58,6 +83,34 @@ public class activity_main extends AppCompatActivity {
             }
         }, DELAY*3);
     }
+
+    private void initStepDetector() {
+        stepDetector = new StepDetector(this, new StepCallback() {
+            @Override
+            public void stepX() {
+                // TODO
+                Log.d("pttt","X: " + stepDetector.getStepsX());
+                if (0 == stepDetector.getStepsX()) {
+                    moveLeft();
+                } else {
+                    moveRight();
+                }
+
+            }
+
+            @Override
+            public void stepY() {
+                Log.d("pttt","Y: " + stepDetector.getStepsY());
+                DELAY = stepDetector.getStepsY();
+            }
+
+            @Override
+            public void stepZ() {
+            }
+        });
+        stepDetector.stepCounterY = DELAY;
+    }
+
     private void findViews()
     {
         heartArr=new ImageView[3];
@@ -244,11 +297,13 @@ public class activity_main extends AppCompatActivity {
     protected void onResume() {
         Log.d("pttt","onResume");
         super.onResume();
+        stepDetector.start();
     }
     @Override
     protected void onPause() {
         Log.d("pttt","onPause");
         super.onPause();
+        stepDetector.stop();
     }
 
     @Override
