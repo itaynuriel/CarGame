@@ -13,7 +13,6 @@ import com.google.android.material.textview.MaterialTextView;
 import java.util.ArrayList;
 
 import com.example.hw1.Utilities.Score;
-import com.example.hw1.R;
 
 public class Adapter_Score extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -29,7 +28,6 @@ public class Adapter_Score extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         this.activity = activity;
         this.scores = scores;
     }
-
     public Adapter_Score setScoreItemClickListener(ScoreItemClickListener scoreItemClickListener) {
         this.scoreItemClickListener = scoreItemClickListener;
         return this;
@@ -65,7 +63,6 @@ public class Adapter_Score extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         public AppCompatImageView score_IMG_background;
         public MaterialTextView score_LBL_rank;
         public MaterialTextView score_LBL_score;
-        public MaterialTextView score_LBL_the_date;
 
 
         public ScoreViewHolder(final View itemView) {

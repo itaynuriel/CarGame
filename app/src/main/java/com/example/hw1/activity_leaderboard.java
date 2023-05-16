@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hw1.Utilities.Score;
 
@@ -17,9 +18,9 @@ import java.util.Collections;
 public class activity_leaderboard extends AppCompatActivity {
     private FragmentRanks fragmentRanks;
     private MapFragment fragmentMap;
-
     private Button backButton;
-    private ArrayList<Score> scores;
+
+    private RecyclerView main_LST_Scores;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,15 +31,12 @@ public class activity_leaderboard extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ArrayList<Score> scores = new ArrayList<>();
-                for (int i = 0; i < 5; i++) {
-                    scores.add(new Score(i, true, i*100, i*200));
-                }
-                fragmentRanks.setScores(scores);
+                Intent intent = new Intent(activity_leaderboard.this, main_activity_menu.class);
+                startActivity(intent);
+                finish();
             }
         });
 
-        scores = new ArrayList<>();
 
         fragmentRanks = new FragmentRanks();
         fragmentRanks.setActivity(this);

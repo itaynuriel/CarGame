@@ -1,9 +1,12 @@
 package com.example.hw1;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -27,6 +30,8 @@ public class FragmentRanks extends Fragment {
     private RecyclerView fragment_ranks_LST_scores;
     private CallBack_Ranks callBackRanks;
     private LinearLayoutManager linearLayoutManager;
+
+    private ArrayList<Score> scores;
 
     public FragmentRanks() {
     };
@@ -67,11 +72,19 @@ public class FragmentRanks extends Fragment {
         View view = inflater.inflate(R.layout.fragment_ranks, container, false);
         findViews(view);
 
-        linearLayoutManager = new LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false);
+        linearLayoutManager = new LinearLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL, false);
         fragment_ranks_LST_scores.setLayoutManager(linearLayoutManager);
         fragment_ranks_LST_scores.setHasFixedSize(true);
         fragment_ranks_LST_scores.setItemAnimator(new DefaultItemAnimator());
-
+        ArrayList<Score> scores = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+                scores.add(new Score(i, true, i*100, i*200));
+        }
+        Adapter_Score adapter_score = new Adapter_Score(activity, scores);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(activity);
+        linearLayoutManager.setOrientation((RecyclerView.VERTICAL));
+        fragment_ranks_LST_scores.setAdapter(adapter_score);
+        fragment_ranks_LST_scores.setLayoutManager(linearLayoutManager);
         return view;
     }
 

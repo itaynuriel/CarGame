@@ -9,6 +9,7 @@ import com.example.hw1.Utilities.StepDetector;
 import com.example.hw1.Utilities.signalGenerator;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -43,9 +44,10 @@ public class activity_main extends AppCompatActivity {
     private int counter = 0;
     private int heartArrayIndex=2;
 
-
     private StepDetector stepDetector;
 
+    SharedPreferences sharedPreferences = getSharedPreferences("Score", MODE_PRIVATE);
+    SharedPreferences.Editor editor = sharedPreferences.edit();
 
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -297,13 +299,15 @@ public class activity_main extends AppCompatActivity {
     protected void onResume() {
         Log.d("pttt","onResume");
         super.onResume();
-        stepDetector.start();
+        if(game_mode==2)
+            stepDetector.start();
     }
     @Override
     protected void onPause() {
         Log.d("pttt","onPause");
         super.onPause();
-        stepDetector.stop();
+        if(game_mode==2)
+            stepDetector.stop();
     }
 
     @Override

@@ -1,5 +1,9 @@
 package com.example.hw1.Utilities;
 
+import android.os.Bundle;
+
+import androidx.recyclerview.widget.RecyclerView;
+
 public class Score implements Comparable {
 
     private int score;
@@ -8,7 +12,6 @@ public class Score implements Comparable {
 
     public Score() {
     }
-
     public Score(int score, boolean onLocation, double latitude, double longitude) {
         this.score = score;
         this.onLocation = onLocation;
